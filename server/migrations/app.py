@@ -46,6 +46,7 @@ class PlantByID(Resource):
     def get(self, id):
         plant = Plant.query.filter_by(id=id).first().to_dict()
         return make_response(jsonify(plant), 200)
+    
     def patch(self,id):
         data = request.get_json()
         plant = Plant.query.filter_by(id=id).first()
